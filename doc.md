@@ -10,3 +10,5 @@
     ```
     $ sh output/bootstrap.sh
     ```
+4. 创建cmd/api目录，创建Makefile。make hertz_new_api，
+    然后生成hertz_handler/api下的api_service.go文件即为业务逻辑的handler，包含所有定义的方法。
