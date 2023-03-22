@@ -3,13 +3,25 @@
 package main
 
 import (
-	"github.com/cloudwego/hertz/pkg/app/server"
+	"context"
 	handler "note/cmd/api/hertz_handler"
+	"note/cmd/api/hertz_handler/api"
+	"note/pkg/errno"
+
+	"github.com/cloudwego/hertz/pkg/app"
+	"github.com/cloudwego/hertz/pkg/app/server"
 )
 
 // customizeRegister registers customize routers.
+// 添加一些额外的错误处理路由
 func customizedRegister(r *server.Hertz) {
 	r.GET("/ping", handler.Ping)
 
 	// your code ...
+	r.NoRoute(func(ctx context.Context, c *app.RequestContext) { // used for HTTP 404
+		api.SendResponse(c, errno.ServiceErr, nil)
+	})
+	r.NoMethod(func(ctx context.Context, c *app.RequestContext) { // used for HTTP 405
+		api.SendResponse(c, errno.ServiceErr, nil)
+	})
 }

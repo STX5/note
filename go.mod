@@ -15,6 +15,39 @@ require (
 	github.com/andeya/ameda v1.5.3 // indirect
 	github.com/andeya/goutil v1.0.1 // indirect
 	github.com/bufbuild/protocompile v0.5.1 // indirect
+	github.com/cenkalti/backoff/v4 v4.2.0 // indirect
+	github.com/coreos/go-semver v0.3.0 // indirect
+	github.com/coreos/go-systemd/v22 v22.3.2 // indirect
+	github.com/go-logr/logr v1.2.3 // indirect
+	github.com/go-logr/stdr v1.2.2 // indirect
+	github.com/gogo/protobuf v1.3.2 // indirect
+	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
+	github.com/grpc-ecosystem/grpc-gateway/v2 v2.15.0 // indirect
+	github.com/savsgio/gotils v0.0.0-20220530130905-52f3993e8d6d // indirect
+	github.com/sirupsen/logrus v1.8.1 // indirect
+	go.etcd.io/etcd/api/v3 v3.5.5 // indirect
+	go.etcd.io/etcd/client/pkg/v3 v3.5.5 // indirect
+	go.etcd.io/etcd/client/v3 v3.5.5 // indirect
+	go.opencensus.io v0.24.0 // indirect
+	go.opentelemetry.io/contrib/instrumentation/runtime v0.39.0 // indirect
+	go.opentelemetry.io/contrib/propagators/b3 v1.14.0 // indirect
+	go.opentelemetry.io/contrib/propagators/jaeger v1.13.0 // indirect
+	go.opentelemetry.io/contrib/propagators/opencensus v0.39.0 // indirect
+	go.opentelemetry.io/contrib/propagators/ot v1.14.0 // indirect
+	go.opentelemetry.io/otel/bridge/opencensus v0.36.0 // indirect
+	go.opentelemetry.io/otel/exporters/otlp/internal/retry v1.13.0 // indirect
+	go.opentelemetry.io/otel/exporters/otlp/otlpmetric v0.36.0 // indirect
+	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc v0.36.0 // indirect
+	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.13.0 // indirect
+	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.13.0 // indirect
+	go.opentelemetry.io/otel/metric v0.36.0 // indirect
+	go.opentelemetry.io/otel/sdk v1.13.0 // indirect
+	go.opentelemetry.io/otel/sdk/metric v0.36.0 // indirect
+	go.opentelemetry.io/proto/otlp v0.19.0 // indirect
+	go.uber.org/atomic v1.10.0 // indirect
+	go.uber.org/multierr v1.9.0 // indirect
+	go.uber.org/zap v1.17.0 // indirect
+	google.golang.org/grpc v1.53.0 // indirect
 )
 
 require (
@@ -38,8 +71,13 @@ require (
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/pprof v0.0.0-20230309165930-d61513b1440d // indirect
 	github.com/hertz-contrib/jwt v1.0.2
+	github.com/hertz-contrib/obs-opentelemetry/logging/logrus v0.1.1
+	github.com/hertz-contrib/obs-opentelemetry/tracing v0.2.0
+	github.com/hertz-contrib/pprof v0.1.0
 	github.com/jhump/protoreflect v1.15.1 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
+	github.com/kitex-contrib/obs-opentelemetry v0.2.1
+	github.com/kitex-contrib/registry-etcd v0.1.0
 	github.com/klauspost/cpuid/v2 v2.2.4 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
@@ -57,6 +95,7 @@ require (
 	google.golang.org/genproto v0.0.0-20230320184635-7606e756e683 // indirect
 	google.golang.org/protobuf v1.30.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
+	gorm.io/plugin/opentelemetry v0.1.1
 )
 
 replace github.com/apache/thrift => github.com/apache/thrift v0.13.0
