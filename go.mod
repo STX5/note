@@ -20,9 +20,12 @@ require (
 	github.com/coreos/go-systemd/v22 v22.3.2 // indirect
 	github.com/go-logr/logr v1.2.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
+	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.15.0 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/savsgio/gotils v0.0.0-20220530130905-52f3993e8d6d // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
 	go.etcd.io/etcd/api/v3 v3.5.5 // indirect
@@ -48,6 +51,7 @@ require (
 	go.uber.org/multierr v1.9.0 // indirect
 	go.uber.org/zap v1.17.0 // indirect
 	google.golang.org/grpc v1.53.0 // indirect
+	gorm.io/gorm v1.24.6 // indirect
 )
 
 require (
@@ -77,6 +81,7 @@ require (
 	github.com/jhump/protoreflect v1.15.1 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/kitex-contrib/obs-opentelemetry v0.2.1
+	github.com/kitex-contrib/obs-opentelemetry/logging/logrus v0.0.0-20230219092456-5e6c84962323
 	github.com/kitex-contrib/registry-etcd v0.1.0
 	github.com/klauspost/cpuid/v2 v2.2.4 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
@@ -95,6 +100,7 @@ require (
 	google.golang.org/genproto v0.0.0-20230320184635-7606e756e683 // indirect
 	google.golang.org/protobuf v1.30.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
+	gorm.io/driver/mysql v1.4.7
 	gorm.io/plugin/opentelemetry v0.1.1
 )
 

@@ -21,3 +21,4 @@
 7. app.RequestContext.BindAndValidate(): 验证c里面的数据是否可以绑定到req中，并验证约束
 8. api_request/api_service 目录下即为暴露出来的服务接口
 9. Hertz_router/下可以添加路由中间件
+10. gorm添加了 open telemetry 中间件：DB.Use(tracing.NewPlugin())
