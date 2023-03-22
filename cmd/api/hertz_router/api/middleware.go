@@ -5,6 +5,7 @@ package api
 import (
 	"context"
 	"fmt"
+	"note/cmd/api/middleware"
 	"note/pkg/errno"
 
 	"github.com/cloudwego/hertz/pkg/app"
@@ -49,7 +50,10 @@ func _v1Mw() []app.HandlerFunc {
 
 func _noteMw() []app.HandlerFunc {
 	// your code...
-	return nil
+	return []app.HandlerFunc{
+		// use jwt mw
+		middleware.JwtMiddleware.MiddlewareFunc(),
+	}
 }
 
 func _updatenoteMw() []app.HandlerFunc {

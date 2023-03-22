@@ -6,9 +6,10 @@ import (
 	"context"
 	"fmt"
 
+	api "note/hertz_gen/api"
+
 	"github.com/cloudwego/hertz/pkg/common/config"
 	"github.com/cloudwego/hertz/pkg/protocol"
-	api "note/hertz_gen/api"
 )
 
 // unused protection
