@@ -19,3 +19,5 @@
    不仅需要为 /login 接口绑定认证逻辑 authMiddleware.LoginHandler。还要以中间件的方式，
    为需要授权访问的路由组注入授权逻辑 authMiddleware.MiddlewareFunc()
 7. app.RequestContext.BindAndValidate(): 验证c里面的数据是否可以绑定到req中，并验证约束
+8. api_request/api_service 目录下即为暴露出来的服务接口
+9. Hertz_router/下可以添加路由中间件
