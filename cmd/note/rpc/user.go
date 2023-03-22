@@ -18,6 +18,7 @@ import (
 
 var userClient userservice.Client
 
+// 初始化全局变量 userClient
 func initUser() {
 	r, err := etcd.NewEtcdResolver([]string{consts.ETCDAddress})
 	if err != nil {
