@@ -83,7 +83,13 @@ make kitex_gen_server
 即可看到生成的handler.go文件，内含user微服务的所有接口
 
 在 `cmd/user/service/` 目录下对每个接口进行具体实现。
+```sh
+service/
+├── check_user.go           # 用户登录、鉴权
+├── create_user.go          # 创建用户
+└── mget_user.go            # 获得多个用户信息 
 
+```
 查看 `cmd/user/dal/db/` 目录，可以看见user服务通过Gorm，从`consts`包中获得连接DSN，进行数据库连接。并且启用了`gormlogrus`作为logger，`opentelemetry`作为数据库访问的链路追踪。
 
 由于gorm定义的model与kitex生成的rpc model并不完全相同，因此在 `cmd/user/pack` 包对user这个model进行了封装
