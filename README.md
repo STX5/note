@@ -117,5 +117,8 @@ p := provider.NewOpenTelemetryProvider(
 ```
 ## 链路追踪、观测
 ### OPTL
+Opentelemetry 是一个开源的分布式跟踪和指标收集框架，它可以帮助开发人员收集、分析和可视化分布式应用程序中的各种指标、日志和跟踪数据。Opentelemetry 可以与各种语言和框架集成，包括 Java、Python、Go、Node.js 等，并支持多种数据格式和协议。
 ### Jaeger
+Jaeger 是一个开源的分布式跟踪系统，它可以帮助开发人员追踪应用程序中的请求流程，并记录每个请求经过的服务和调用链路，以及每个调用的时间和性能数据。Jaeger 可以与 Opentelemetry 集成，作为其后端存储和可视化的组件之一。
 ### Grafana
+Grafana 是一个开源的数据可视化工具，它可以将收集到的指标、日志和跟踪数据以图表和面板的形式展示出来，以便开发人员更好地理解应用程序的状态和性能。Grafana 可以与多种数据源集成，包括 Prometheus、Jaeger、Opentelemetry 等，并提供丰富的可视化和报警功能。

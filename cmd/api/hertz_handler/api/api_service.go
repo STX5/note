@@ -10,9 +10,8 @@ import (
 	api "note/hertz_gen/api"
 	"note/kitex_gen/note"
 	"note/kitex_gen/user"
-	"note/pkg/errno"
-
 	"note/pkg/consts"
+	"note/pkg/errno"
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/common/utils"

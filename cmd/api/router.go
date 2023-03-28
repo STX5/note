@@ -4,7 +4,7 @@ package main
 
 import (
 	"context"
-	handler "note/cmd/api/hertz_handler"
+	"note/cmd/api/hertz_handler"
 	"note/cmd/api/hertz_handler/api"
 	"note/pkg/errno"
 
@@ -15,7 +15,7 @@ import (
 // customizeRegister registers customize routers.
 // 添加一些额外的错误处理路由
 func customizedRegister(r *server.Hertz) {
-	r.GET("/ping", handler.Ping)
+	r.GET("/ping", hertz_handler.Ping)
 
 	// your code ...
 	r.NoRoute(func(ctx context.Context, c *app.RequestContext) { // used for HTTP 404

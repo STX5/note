@@ -9,6 +9,7 @@ require (
 	github.com/hertz-contrib/gzip v0.0.1
 	github.com/hertz-contrib/requestid v1.1.0
 	go.opentelemetry.io/otel/trace v1.14.0
+	gorm.io/gorm v1.24.6
 )
 
 require (
@@ -22,7 +23,6 @@ require (
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
-	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.15.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
@@ -31,13 +31,9 @@ require (
 	go.etcd.io/etcd/api/v3 v3.5.5 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.5 // indirect
 	go.etcd.io/etcd/client/v3 v3.5.5 // indirect
-	go.opencensus.io v0.24.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/runtime v0.39.0 // indirect
 	go.opentelemetry.io/contrib/propagators/b3 v1.14.0 // indirect
-	go.opentelemetry.io/contrib/propagators/jaeger v1.13.0 // indirect
-	go.opentelemetry.io/contrib/propagators/opencensus v0.39.0 // indirect
 	go.opentelemetry.io/contrib/propagators/ot v1.14.0 // indirect
-	go.opentelemetry.io/otel/bridge/opencensus v0.36.0 // indirect
 	go.opentelemetry.io/otel/exporters/otlp/internal/retry v1.13.0 // indirect
 	go.opentelemetry.io/otel/exporters/otlp/otlpmetric v0.36.0 // indirect
 	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc v0.36.0 // indirect
@@ -51,7 +47,6 @@ require (
 	go.uber.org/multierr v1.9.0 // indirect
 	go.uber.org/zap v1.17.0 // indirect
 	google.golang.org/grpc v1.53.0 // indirect
-	gorm.io/gorm v1.24.6 // indirect
 )
 
 require (
