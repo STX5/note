@@ -121,6 +121,7 @@ p := provider.NewOpenTelemetryProvider(
 2. jaeger-all-in-one：Jaeger分布式跟踪系统
 3. victoriametrics：时间序列数据库
 4. grafana：可视化仪表盘
+  
 otel-collector依赖于jaeger-all-in-one，因为在容器中启用了Jaeger的OTLP gRPC接收器。victoriametrics将端口8428暴露给其他服务，以便它们可以发送数据到时间序列数据库。grafana将端口3000暴露给其他服务，以便它们可以访问可视化仪表盘
 
 以下为optl的部分配置信息
