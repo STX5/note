@@ -116,9 +116,62 @@ p := provider.NewOpenTelemetryProvider(
 )
 ```
 ## 链路追踪、观测
-### OPTL
-Opentelemetry 是一个开源的分布式跟踪和指标收集框架，它可以帮助开发人员收集、分析和可视化分布式应用程序中的各种指标、日志和跟踪数据。Opentelemetry 可以与各种语言和框架集成，包括 Java、Python、Go、Node.js 等，并支持多种数据格式和协议。
-### Jaeger
-Jaeger 是一个开源的分布式跟踪系统，它可以帮助开发人员追踪应用程序中的请求流程，并记录每个请求经过的服务和调用链路，以及每个调用的时间和性能数据。Jaeger 可以与 Opentelemetry 集成，作为其后端存储和可视化的组件之一。
-### Grafana
-Grafana 是一个开源的数据可视化工具，它可以将收集到的指标、日志和跟踪数据以图表和面板的形式展示出来，以便开发人员更好地理解应用程序的状态和性能。Grafana 可以与多种数据源集成，包括 Prometheus、Jaeger、Opentelemetry 等，并提供丰富的可视化和报警功能。
+根据docker-compose文件，我们启用了四个服务
+1. otel-collector：OpenTelemetry Collector
+2. jaeger-all-in-one：Jaeger分布式跟踪系统
+3. victoriametrics：时间序列数据库
+4. grafana：可视化仪表盘
+otel-collector依赖于jaeger-all-in-one，因为在容器中启用了Jaeger的OTLP gRPC接收器。victoriametrics将端口8428暴露给其他服务，以便它们可以发送数据到时间序列数据库。grafana将端口3000暴露给其他服务，以便它们可以访问可视化仪表盘
+
+以下为optl的部分配置信息
+```yaml
+receivers:
+  otlp:
+
+exporters:
+  prometheusremotewrite:
+    endpoint: "http://victoriametrics:8428/api/v1/write"
+
+  logging:
+
+  jaeger:
+    endpoint: jaeger-all-in-one:14250
+
+service:
+  pipelines:
+    traces:
+      receivers: [ otlp ]
+      processors: [ batch ]
+      exporters: [ logging, jaeger ]
+    metrics:
+      receivers: [ otlp ]
+      processors: [ batch ]
+      exporters: [ logging, prometheusremotewrite ]
+```
+1. Receivers：首先定义了一个 OTLP Receiver，用于接收应用程序发送的数据。
+2. Exporters：定义了三个 Exporters：Prometheus Remote Write Exporter（用于将数据导出到 VictoriaMetrics），Logging Exporter 和 Jaeger Exporter。
+3. Service: 在这个配置文件中，定义了两个 Pipelines：Traces Pipeline（用于处理跟踪数据）和 Metrics Pipeline（用于处理指标数据），并且使用了上面定义的 Receivers、Processors 和 Exporters。
+### Jaeger Grafana
+- jaeger：浏览器打开 `http://127.0.0.1:16686/` 
+![Jaeger](pic/jaeger.png)
+- grafana：浏览器打开 `http://127.0.0.1:3000/`
+
+登录 Grafana，并在左侧导航栏中选择 "Configuration"。
+
+在 Configuration 页面上，选择 "Data Sources"，然后点击 "Add data source" 按钮。
+
+在 Add data source 页面上，搜索并选择 Jaeger 数据源插件。
+
+在 Jaeger 数据源的配置页面上，填写以下信息：
+
+- Name：数据源名称
+- URL：Jaeger 的地址 (由于我使用的wsl，需要设置为eth0的IP，而不是localhost)
+
+配置完成后，点击 "Save & Test" 按钮来测试连接是否成功。如果成功，会出现 "Data source is working" 的提示。
+
+配置完成后，在 Grafana 中创建一个新的 Dashboard，并选择 "Add Query" 按钮。
+
+在 "Query" 页面中，选择 Jaeger 数据源，并选择要查询的 trace 数据（例如，按服务、操作、tag 等）。
+
+完成 Query 配置后，就可以在 Dashboard 中看到 Jaeger 的 trace 数据。
+![Grafana](pic/grafana.png)
